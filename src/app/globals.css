@@ -39,3 +39,21 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+/* Swiper pagination styling for hero */
+.hero-swiper .swiper-pagination {
+  bottom: 10px !important;
+}
+
+.hero-swiper .swiper-pagination-bullet {
+  width: 34px;
+  height: 6px;
+  border-radius: 9999px;
+  background: #c3b2a6;
+  opacity: 1;
+  margin: 0 6px !important;
+}
+
+.hero-swiper .swiper-pagination-bullet-active {
+  background: #0e6664; /* match your green bar in the screenshot */
+}
