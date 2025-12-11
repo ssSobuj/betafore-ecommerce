@@ -8,10 +8,13 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   return (
-    <article className="flex h-full flex-col border border-slate-200 bg-white px-4 py-3 shadow-sm">
-      <span className="mb-2 text-[11px] text-slate-500">
-        Bin Bakar Electronics
-      </span>
+    <article className="flex h-full flex-col border border-[#d4d4d4] p-[14px]">
+      <span className="mb-2 text-[12px] ">{product?.category}</span>
+      <Link href={`/products/${product.id}`}>
+        <h5 className="mb-1 h-9 overflow-hidden text-ellipsis whitespace-nowrap text-[15px] font-normal text-[#034E53]">
+          {product.title}
+        </h5>
+      </Link>
 
       <Link
         href={`/products/${product.id}`}
@@ -26,20 +29,13 @@ export function ProductCard({ product }: ProductCardProps) {
         />
       </Link>
 
-      <Link href={`/products/${product.id}`}>
-        <h3 className="mb-1 h-9 overflow-hidden text-ellipsis text-sm font-semibold text-slate-900">
-          {product.title}
-        </h3>
-      </Link>
-
       <div className="mt-auto">
-        <div className="mb-1 text-xs text-slate-400 line-through">
-          RS 60,000
+        <div className="flex items-center gap-2 mb-3">
+          {" "}
+          <p className=" text-[13px] text-[#697475] line-through">RS 60,000</p>
+          <p className=" text-[15px] text-text-2">RS {product.price}</p>
         </div>
-        <div className="mb-3 text-sm font-semibold text-brand-accent">
-          RS {product.price}
-        </div>
-        <button className="w-full rounded bg-brand-accent py-2 text-xs font-semibold text-white">
+        <button className="w-full text-[15px] bg-secondary text-white px-9 py-[9px]  hover:bg-secondary cursor-pointer">
           Add to cart
         </button>
       </div>
