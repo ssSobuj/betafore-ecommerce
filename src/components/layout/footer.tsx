@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -7,26 +8,46 @@ export function Footer() {
       <div className=" grid gap-[172px] px-26.5 pt-14 md:grid-cols-4">
         {/* Column 1 */}
         <div>
-          <Image
-            src="/images/logo.png"
-            alt="Logo"
-            width={132}
-            height={48}
-            unoptimized
-            className="mb-3.5"
-          />
+          <Link href="#">
+            <Image
+              src="/images/logo.png"
+              alt="Logo"
+              width={132}
+              height={48}
+              unoptimized
+              className="mb-3.5"
+            />
+          </Link>
+
           <p className="mb-3.5 text-[#00CAD7] text-[18px] whitespace-nowrap">
             Got questions? Call us 24/7!
           </p>
-          <p className=" text-[13px]">03 111 666 144</p>
-          <p className=" text-[13px] mb-3.5">0317 1777015</p>
+
+          <p className=" text-[13px]">
+            <Link href="#">03 111 666 144</Link>
+          </p>
+          <p className=" text-[13px] mb-3.5">
+            <Link href="#">0317 1777015</Link>
+          </p>
+
           <p className="text-[18px] text-[#00CAD7] mb-0">Contact Info</p>
-          <p className="text-[15px] mb-3.5">info@winstore.pk</p>
+          <p className="text-[15px] mb-3.5">
+            <Link href="#">info@winstore.pk</Link>
+          </p>
+
           <div className="flex items-center gap-6">
-            <Facebook size={22} />
-            <Twitter size={22} />
-            <Linkedin size={22} />
-            <Instagram size={22} />
+            <Link href="#">
+              <Facebook size={22} />
+            </Link>
+            <Link href="#">
+              <Twitter size={22} />
+            </Link>
+            <Link href="#">
+              <Linkedin size={22} />
+            </Link>
+            <Link href="#">
+              <Instagram size={22} />
+            </Link>
           </div>
         </div>
 
@@ -34,11 +55,21 @@ export function Footer() {
         <div>
           <h4 className="mb-5.5 text-[#00CAD7] text-[20px]">Trending</h4>
           <ul className="space-y-3">
-            <li>Installments</li>
-            <li>Electronics</li>
-            <li>Grocery</li>
-            <li>Health &amp; Beauty</li>
-            <li>Home Appliances</li>
+            <li>
+              <Link href="#">Installments</Link>
+            </li>
+            <li>
+              <Link href="#">Electronics</Link>
+            </li>
+            <li>
+              <Link href="#">Grocery</Link>
+            </li>
+            <li>
+              <Link href="#">Health &amp; Beauty</Link>
+            </li>
+            <li>
+              <Link href="#">Home Appliances</Link>
+            </li>
           </ul>
         </div>
 
@@ -46,11 +77,21 @@ export function Footer() {
         <div>
           <h4 className="mb-5.5 text-[#00CAD7] text-[20px]">Information</h4>
           <ul className="space-y-3">
-            <li>About Us</li>
-            <li>Contact Us</li>
-            <li>Shipping &amp; Return</li>
-            <li>Privacy Policy</li>
-            <li>Terms &amp; Conditions</li>
+            <li>
+              <Link href="#">About Us</Link>
+            </li>
+            <li>
+              <Link href="#">Contact Us</Link>
+            </li>
+            <li>
+              <Link href="#">Shipping &amp; Return</Link>
+            </li>
+            <li>
+              <Link href="#">Privacy Policy</Link>
+            </li>
+            <li>
+              <Link href="#">Terms &amp; Conditions</Link>
+            </li>
           </ul>
         </div>
 
@@ -58,11 +99,21 @@ export function Footer() {
         <div>
           <h4 className="mb-5.5 text-[#00CAD7] text-[20px]">Customer Care</h4>
           <ul className="space-y-3">
-            <li>My Account</li>
-            <li>Track Your Order</li>
-            <li>Recently Viewed</li>
-            <li>Wishlist</li>
-            <li>Become a Vendor</li>
+            <li>
+              <Link href="#">My Account</Link>
+            </li>
+            <li>
+              <Link href="#">Track Your Order</Link>
+            </li>
+            <li>
+              <Link href="#">Recently Viewed</Link>
+            </li>
+            <li>
+              <Link href="#">Wishlist</Link>
+            </li>
+            <li>
+              <Link href="#">Become a Vendor</Link>
+            </li>
           </ul>
         </div>
       </div>

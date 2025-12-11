@@ -39,7 +39,7 @@ export function CategoryStrip({ categories }: CategoryStripProps) {
   ];
 
   return (
-    <section className="relative py-4 bg-[linear-gradient(to_bottom,#F3EDC9,#FFFFFF)]">
+    <section className="relative pt-4 bg-[linear-gradient(to_bottom,#F3EDC9,#FFFFFF)]">
       <div className="px-[51px]">
         <Swiper
           modules={[Navigation]}

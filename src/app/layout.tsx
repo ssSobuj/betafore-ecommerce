@@ -3,6 +3,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import localFont from "next/font/local";
+import { getCategories } from "@/actions/products";
 
 const centuryGothic = localFont({
   src: [
@@ -25,16 +26,18 @@ export const metadata: Metadata = {
   description: "Frontend assessment implementation using Next.js App Router",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const categories = await getCategories(); // SERVER FETCH
+
   return (
     <html lang="en" className={centuryGothic.className}>
       <body className="bg-bg text-text ">
-        <div className="mx-auto flex min-h-screen w-full max-w-[1400px] flex-col">
-          <Navbar />
+        <div className="mx-auto flex min-h-screen w-full  flex-col">
+          <Navbar categories={categories} />
           <main className="flex-1">{children}</main>
           <Footer />
         </div>

@@ -6,11 +6,7 @@ export default async function ProductsPage() {
 
   return (
     <div className="pt-6">
-      <ProductsSection
-        title="All Products"
-        subtitle={`Total products: ${products.length}`}
-        products={products}
-      />
+      <ProductsSection title1="All " title2="Products" products={products} />
     </div>
   );
 }
