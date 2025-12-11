@@ -100,7 +100,11 @@ export function ProductsSection({
 
             {/* Left / right arrows */}
             <div className="flex items-center gap-4 pb-3">
-              <Link href={prevCategoryHref} aria-label="Previous category">
+              <Link
+                scroll={false}
+                href={prevCategoryHref}
+                aria-label="Previous category"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width={9}
@@ -112,7 +116,11 @@ export function ProductsSection({
                 </svg>
               </Link>
 
-              <Link href={nextCategoryHref} aria-label="Next category">
+              <Link
+                scroll={false}
+                href={nextCategoryHref}
+                aria-label="Next category"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width={9}
@@ -120,7 +128,7 @@ export function ProductsSection({
                   viewBox="0 0 9 14"
                   fill="none"
                 >
-                  <path d="M0 14L9 7L0 0V14Z" fill="#A0A0A0" />
+                  <path d="M0 14L9 7L0 0V14Z" fill="#1A1C1C" />
                 </svg>
               </Link>
             </div>

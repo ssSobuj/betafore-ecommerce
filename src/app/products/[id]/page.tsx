@@ -2,13 +2,19 @@ import { getProduct } from "@/actions/products";
 import Image from "next/image";
 
 interface ProductPageProps {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>;
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
-  const productId = Number(params.id);
+  const { id } = await params; // 👈 IMPORTANT
+  const productId = Number(id);
+
+  console.log("Product ID:", productId);
+
+  if (isNaN(productId)) {
+    throw new Error("Invalid product ID");
+  }
+
   const product = await getProduct(productId);
 
   return (
@@ -43,7 +49,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             {product.description}
           </p>
 
-          <button className="mt-4 rounded bg-brand-accent px-5 py-2 text-sm font-semibold text-white">
+          <button className=" mt-4  text-[15px] bg-secondary text-white px-9 py-[9px]  hover:bg-secondary cursor-pointer">
             Add to cart
           </button>
         </div>

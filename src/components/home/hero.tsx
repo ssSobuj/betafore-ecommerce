@@ -37,6 +37,7 @@ import { Pagination } from "swiper/modules";
 // Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import Link from "next/link";
 
 const slides = [
   {
@@ -89,9 +90,12 @@ export function Hero() {
                     I am not a product of my circumstances. I am a product of my
                     decisions.
                   </p>
-                  <button className="max-w-fit text-[15px] bg-primary text-white px-10 py-[15px] rounded-[5px] hover:bg-secondary cursor-pointer">
+                  <Link
+                    href={`/products`}
+                    className="max-w-fit text-[15px] bg-primary text-white px-10 py-[15px] rounded-[5px] hover:bg-secondary cursor-pointer"
+                  >
                     View More
-                  </button>
+                  </Link>
                 </div>
               </div>
 

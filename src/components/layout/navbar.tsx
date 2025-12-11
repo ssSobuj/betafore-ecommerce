@@ -1,5 +1,6 @@
 "use client";
 
+import { Category } from "@/types/category";
 import {
   Facebook,
   Headphones,
@@ -15,8 +16,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-export function Navbar() {
+export function Navbar({ categories }: { categories?: Category[] }) {
   const [search, setSearch] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   return (
     <header className="border-b border-slate-200 text-white">
@@ -40,13 +42,17 @@ export function Navbar() {
             {/* LEFT: CATEGORY SELECT (REAL SELECT) */}
             <div className="relative flex items-center px-3 text-[#ABA3A3] text-[14px]">
               <select
-                className="appearance-none bg-transparent text-[#ABA3A3] text-[14px] outline-none pr-6"
-                defaultValue="all"
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="appearance-none bg-transparent text-[14px] outline-none pr-6 capitalize"
               >
                 <option value="all">All categories</option>
-                <option value="electronics">Electronics</option>
-                <option value="fashion">Fashion</option>
-                <option value="grocery">Grocery</option>
+
+                {categories?.map((c) => (
+                  <option className="capitalize " key={c.id} value={c.name}>
+                    {c.name}
+                  </option>
+                ))}
               </select>
 
               {/* Custom dropdown arrow */}
@@ -172,13 +178,13 @@ export function Navbar() {
             <Link href="/" className="hover:underline text-[13px]">
               Home
             </Link>
-            <Link href="#" className="hover:underline text-[13px]">
+            <Link href="/products" className="hover:underline text-[13px]">
               Easy Monthly Installments
             </Link>
-            <Link href="#" className="hover:underline text-[13px]">
+            <Link href="/products" className="hover:underline text-[13px]">
               Shop by Brands
             </Link>
-            <Link href="#" className="hover:underline text-[13px]">
+            <Link href="/products" className="hover:underline text-[13px]">
               Become a Vendor
             </Link>
           </div>
